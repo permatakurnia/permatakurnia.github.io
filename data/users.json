@@ -1,0 +1,30 @@
+
+{
+  "employees" : [
+    {
+      "id": 1,
+      "email": "izzudin.razali@infinitelogix.com.my",
+      "name": "Mohd Izzudin Bin Razali",
+      "role": "Super Admin",
+      "status": "Aktif"
+    },{
+      "id": 2,
+      "email": "kamarolkarim@gmail.com",
+      "name": "Kamarol Karim",
+      "role": "Super Admin",
+      "status": "Aktif"
+    },{
+      "id": 3,
+      "email": "sri@gmail.com",
+      "name": "Sri",
+      "role": "Admin",
+      "status": "Aktif"
+    },{
+      "id": 4,
+      "email": "Mail@gmail.com",
+      "name": "Mail",
+      "role": "Parent",
+      "status": "Aktif"
+    }
+  ]
+}
