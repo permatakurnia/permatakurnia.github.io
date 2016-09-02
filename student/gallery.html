@@ -14,6 +14,10 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="../plugins/dropzone/dist/min/dropzone.min.css">
+    <link rel="stylesheet" href="../plugins/dropzone/dist/min/basic.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
@@ -314,181 +318,226 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Pelajar
+                    Maklumat Pelajar
                 </h1>
             </section>
             <!-- Main content -->
             <section class="content">
                 <div class="row">
-                    <div class="col-xs-12">
-                        <div class="box box-solid">
-                            <div class="box-header text-right">
-                                <a href="create.html" class="btn btn-success btn-sm"><i class="ion ion-ios-plus-outline"></i> Tambah Pelajar</a>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon">
+                                <h4>Gambar Pelajar</h4>
+                            </span>
+                            <div class="info-box-content">
+                                <span class="info-box-number">Syazwan Iman</span>
+                                <div class="pull-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="btn btn-success btn-sm raised dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu text-center">
+                                            <li><a href="">Kemaskini</a></li>        
+                                            <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="box-body">
-                                <table id="table" class="table">
-                                    <thead>
-                                          <tr>
-                                            <th>Nama Pelajar</th>
-                                            <th>Tarikh Lahir</th>
-                                            <th>&nbsp;</th>
-                                          </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="user-block">
-                                                    <img class="img-circle" src="../dist/img/user1-128x128.jpg" alt="User Image">
-                                                    <span class="username"><a href="show.html">Syazwan Iman</a></span>
-                                                </div>
-                                            </td>
-                                            <td>27 Jan 2010</td>
-                                            <td class="text-center">
-                                                <div class="dropdown">
-                                                    <a href="#" class="btn btn-success btn-sm raised dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
-                                                    </a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="show.html">Papar</a></li>
-                                                        <li><a href="">Edit</a></li>
-                                                        <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
-                                                    </ul>
-                                                    <div class="modal fade" id="delete-work-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                                    <h4 class="modal-title" id="myModalLabel">Padam </h4>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    Anda pasti untuk padam pelajar ini?
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Tutup</button>
-                                                                    <a href="" class="btn btn-success btn-sm raised">Padam</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="user-block">
-                                                    <img class="img-circle" src="../dist/img/user1-128x128.jpg" alt="User Image">
-                                                    <span class="username"><a href="show.html">Tan Yu Wei</a></span>
-                                                </div>
-                                            </td>
-                                            <td>26 September 2010</td>
-                                            <td class="text-center">
-                                                <div class="dropdown">
-                                                    <a href="#" class="btn btn-success btn-sm raised dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
-                                                    </a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="show.html">Papar</a></li>
-                                                        <li><a href="">Edit</a></li>
-                                                        <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
-                                                    </ul>
-                                                    <div class="modal fade" id="delete-work-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                                    <h4 class="modal-title" id="myModalLabel">Padam </h4>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    Anda pasti untuk padam pelajar ini?
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Tutup</button>
-                                                                    <a href="" class="btn btn-success btn-sm raised">Padam</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="user-block">
-                                                    <img class="img-circle" src="../dist/img/user1-128x128.jpg" alt="User Image">
-                                                    <span class="username"><a href="show.html">Alif Haikal</a></span>
-                                                </div>
-                                            </td>
-                                            <td>30 Jun 2010</td>
-                                            <td class="text-center">
-                                                <div class="dropdown">
-                                                    <a href="#" class="btn btn-success btn-sm raised dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
-                                                    </a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="show.html">Papar</a></li>
-                                                        <li><a href="">Edit</a></li>
-                                                        <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
-                                                    </ul>
-                                                    <div class="modal fade" id="delete-work-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                                    <h4 class="modal-title" id="myModalLabel">Padam </h4>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    Anda pasti untuk padam pelajar ini?
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Tutup</button>
-                                                                    <a href="" class="btn btn-success btn-sm raised">Padam</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="user-block">
-                                                    <img class="img-circle" src="../dist/img/user1-128x128.jpg" alt="User Image">
-                                                    <span class="username"><a href="show.html">Ali Hussein Akhbar</a></span>
-                                                </div>
-                                            </td>
-                                            <td>14 Mac 2011</td>
-                                            <td class="text-center">
-                                                <div class="dropdown">
-                                                    <a href="#" class="btn btn-success btn-sm raised dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
-                                                    </a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="show.html">Papar</a></li>
-                                                        <li><a href="">Edit</a></li>
-                                                        <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
-                                                    </ul>
-                                                    <div class="modal fade" id="delete-work-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                                    <h4 class="modal-title" id="myModalLabel">Padam </h4>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    Anda pasti untuk padam pelajar ini?
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Tutup</button>
-                                                                    <a href="" class="btn btn-success btn-sm raised">Padam</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <form action="<?= $this->Url->build(['action' => 'documents', $vehicle->id]) ?>" class="dropzone" id="documents"></form>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                                <div class="small-box">
+                                    <img src="../dist/img/user4-128x128.jpg" class="img" style="width: 100%"/>
+                                    <div class="small-box-footer">
+                                        <span class="row">
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left"><h5>Photo 1</h5></span>
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                                                <span class="dropdown">
+                                                  <a href="#" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+                                                  </a>
+                                                  <ul class="dropdown-menu">
+                                                    <li><a href=""><i class="fa fa-trash"></i> Delete</a></li>
+                                                    <li><a href=""><i class="fa fa-file-image-o"></i> Set as Default Image</a></li>
+                                                  </ul>
+                                                </span>
+                                            </span>
+                                                
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                                <div class="small-box">
+                                    <img src="../dist/img/user4-128x128.jpg" class="img" style="width: 100%"/>
+                                    <div class="small-box-footer">
+                                        <span class="row">
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left"><h5>Photo 1</h5></span>
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                                                <span class="dropdown">
+                                                  <a href="#" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+                                                  </a>
+                                                  <ul class="dropdown-menu">
+                                                    <li><a href=""><i class="fa fa-trash"></i> Delete</a></li>
+                                                    <li><a href=""><i class="fa fa-file-image-o"></i> Set as Default Image</a></li>
+                                                  </ul>
+                                                </span>
+                                            </span>
+                                                
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                                <div class="small-box">
+                                    <img src="../dist/img/user4-128x128.jpg" class="img" style="width: 100%"/>
+                                    <div class="small-box-footer">
+                                        <span class="row">
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left"><h5>Photo 1</h5></span>
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                                                <span class="dropdown">
+                                                  <a href="#" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+                                                  </a>
+                                                  <ul class="dropdown-menu">
+                                                    <li><a href=""><i class="fa fa-trash"></i> Delete</a></li>
+                                                    <li><a href=""><i class="fa fa-file-image-o"></i> Set as Default Image</a></li>
+                                                  </ul>
+                                                </span>
+                                            </span>
+                                                
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                                <div class="small-box">
+                                    <img src="../dist/img/user4-128x128.jpg" class="img" style="width: 100%"/>
+                                    <div class="small-box-footer">
+                                        <span class="row">
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left"><h5>Photo 1</h5></span>
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                                                <span class="dropdown">
+                                                  <a href="#" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+                                                  </a>
+                                                  <ul class="dropdown-menu">
+                                                    <li><a href=""><i class="fa fa-trash"></i> Delete</a></li>
+                                                    <li><a href=""><i class="fa fa-file-image-o"></i> Set as Default Image</a></li>
+                                                  </ul>
+                                                </span>
+                                            </span>
+                                                
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                                <div class="small-box">
+                                    <img src="../dist/img/user4-128x128.jpg" class="img" style="width: 100%"/>
+                                    <div class="small-box-footer">
+                                        <span class="row">
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left"><h5>Photo 1</h5></span>
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                                                <span class="dropdown">
+                                                  <a href="#" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+                                                  </a>
+                                                  <ul class="dropdown-menu">
+                                                    <li><a href=""><i class="fa fa-trash"></i> Delete</a></li>
+                                                    <li><a href=""><i class="fa fa-file-image-o"></i> Set as Default Image</a></li>
+                                                  </ul>
+                                                </span>
+                                            </span>
+                                                
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                                <div class="small-box">
+                                    <img src="../dist/img/user4-128x128.jpg" class="img" style="width: 100%"/>
+                                    <div class="small-box-footer">
+                                        <span class="row">
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left"><h5>Photo 1</h5></span>
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                                                <span class="dropdown">
+                                                  <a href="#" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+                                                  </a>
+                                                  <ul class="dropdown-menu">
+                                                    <li><a href=""><i class="fa fa-trash"></i> Delete</a></li>
+                                                    <li><a href=""><i class="fa fa-file-image-o"></i> Set as Default Image</a></li>
+                                                  </ul>
+                                                </span>
+                                            </span>
+                                                
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                                <div class="small-box">
+                                    <img src="../dist/img/user4-128x128.jpg" class="img" style="width: 100%"/>
+                                    <div class="small-box-footer">
+                                        <span class="row">
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left"><h5>Photo 1</h5></span>
+                                            <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                                                <span class="dropdown">
+                                                  <a href="#" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-cog"></i>&nbsp;<span class="caret"></span>
+                                                  </a>
+                                                  <ul class="dropdown-menu">
+                                                    <li><a href=""><i class="fa fa-trash"></i> Delete</a></li>
+                                                    <li><a href=""><i class="fa fa-file-image-o"></i> Set as Default Image</a></li>
+                                                  </ul>
+                                                </span>
+                                            </span>
+                                                
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                         </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="box box-solid">
+                            <div class="box-body no-padding">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li class="">
+                                        <a href="show.html"><i class="fa fa-user"></i> Maklumat Pelajar</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="guardian.html"><i class="fa fa-users"></i> Maklumat Penjaga</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="holiday.html"><i class="fa fa-calendar"></i> Cuti </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="attendance.html"><i class="fa fa-check"></i> Kehadiran </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="ppik.html"><i class="fa fa-dot-circle-o"></i> Pelan Perkhidmatan Individu Dan Keluarga (PPIK) </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="dokumen.html"><i class="fa fa-file-text"></i> Dokumen </a>
+                                    </li>
+                                    <li class="">
+                                        <a href=""><i class="fa fa-line-chart"></i> Pencapaian Kemahiran </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="gallery.html"><i class="fa fa-picture-o"></i> Gallery </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -511,11 +560,17 @@
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="../plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="../plugins/dropzone/dist/min/dropzone.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../dist/js/app.min.js"></script>
     <script type="text/javascript">
         $(function () {
             $("#table").DataTable();
+
+            $('#datepicker').datepicker({
+                autoclose: true
+            });
         });
     </script>
 </body>
