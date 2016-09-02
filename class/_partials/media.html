@@ -1,0 +1,54 @@
+<div class="box">
+  <div class="box-header">
+      <div id="dropzone"><form action="/upload" class="dropzone needsclick dz-clickable" id="demo-upload">
+
+        <div class="dz-message needsclick">
+          Drop files here or click to upload.<br>
+          <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+        </div>
+
+      </form></div>
+  </div>
+    
+  <!-- /.box-header -->
+  <div class="box-body">
+
+    <!-- GAMBAR PELAJAR -->
+    <div class="box-header with-border">
+      <h2>Gambar Pelajar</h2>
+    </div>
+    <div class="box-body" >
+      <div class="col-md-4 text-center" ng-repeat="student in cc.classes[0].students">
+        <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        <h4>{{student.name}}</h4>
+      </div>
+    </div>
+
+    <!-- GAMBAR-GAMBAR DALAM KELAS -->
+    <div class="box-header with-border">
+      <h2>Gambar Aktiviti</h2>
+    </div>
+    <div class="box-body" >
+      <div class="col-md-4 text-center" ng-repeat="student in cc.classes[0].students">
+        <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        <h4>Aktiviti {{$index+1}}</h4>
+      </div>
+    </div>
+
+    <!-- Video  -->
+    <div class="box-header with-border">
+      <h2>Video </h2>
+    </div>
+    <div class="box-body" >
+      <div class="col-md-4 text-center" ng-repeat="student in cc.classes[0].students">
+        <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        <h4>Video {{$index+1}}</h4>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.box-body -->
+</div>
+<!-- /.box -->
+
+<script src="../../plugins/dropzone/dist/min/dropzone.min.js"></script>
