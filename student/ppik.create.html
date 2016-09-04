@@ -599,12 +599,88 @@
                                             </div>
                                             <div class="tab-pane" id="tab5">
                                                 <h4><strong>Bahagian 5: Keperluan Ibu Bapa Terhadap Pengajaran Anak di Rumah</strong></h4>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Pengajaran di Rumah</label>
+                                                    <div class="col-sm-10">
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Pertuturan dan komunikasi</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Modifikasi tingkah laku</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Latihan ke tandas</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Makan</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Bermain</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Aktiviti/rutin tidur</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Aktiviti luar bersama keluarga</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Kaunseling</label>
+                                                    <div class="col-sm-10">
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Individu</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Pasangan</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Keluarga</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Kewangan</label>
+                                                    <div class="col-sm-10">
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Bailtulmal</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Zakat</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">BR1M</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">JKM (bantuan/elaun)</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Pelepasan cukai</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" value="">Tajaan</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="tab-pane" id="tab6">
                                                 <h4><strong>Bahagian 6: Laporan Perkembangan untuk Ibu Bapa</strong></h4>
                                             </div>
-                                            <div class="tab-pane" id="tab7">
+                                            <div class="tab-pane" id="tab7" ng-controller="PegawaiCtrl">
                                                 <h4><strong>Bahagian 7: Kakitangan yang Menghadiri Mesyuarat</strong></h4>
+                                                <button class="btn btn-success pull-right" data-toggle="modal" href="#dummy-modal">Tambah Kakitangan</button>
+                                                <div class="modal fade" id="dummy-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                                <h4 class="modal-title" id="myModalLabel">Tambah Kakitangan </h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="row">
+                                                                    <div class="col-md-8 col-md-offset-2">
+                                                                        <div class="form-group">
+                                                                            <label class="control-label">Pilih Kakitangan</label>
+                                                                            <select class="form-control" ng-model="name">
+                                                                                <option value="Sri Nursyafika">Sri Nursyafika</option>
+                                                                                <option value="Dr Shazlina">Dr Shazlina</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Tutup</button>
+                                                                <a href="" class="btn btn-success btn-sm raised" ng-click="tambahKakitangan(name)" data-dismiss="modal">Simpan</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Bil</td>
+                                                            <td>Nama</td>
+                                                            <td>Jawatan</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="(key, pegawai) in pegawais">
+                                                            <td>{{ $index + 1 }}</td>
+                                                            <td>{{ pegawai.nama }}</td>
+                                                            <td>{{ pegawai.jawatan }}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                             <ul class="pager wizard">
                                                 <li class="previous first" style="display:none;"><a href="#">First</a></li>
@@ -729,6 +805,25 @@
             }
       
         });
+        app.controller('PegawaiCtrl', function($scope) {
+
+            $scope.pegawais = [{
+                nama: 'Siti Hazwaani Jasni',
+                jawatan: 'Pegawai Intervensi PERMATA Kurnia'
+            },{
+                nama: 'Fazilah Bt Ahmad',
+                jawatan: 'Ibu'
+            },{
+                nama: 'Mohd Azlishah Rahman',
+                jawatan: 'Bapa'
+            }];
+
+            $scope.tambahKakitangan = function(name) {
+
+                console.log(name);
+                $scope.pegawais.push({'nama': name, 'jawatan': 'Pegawai'});
+            }
+        })
     </script>
 </body>
 
