@@ -27,7 +27,7 @@
   <![endif]-->
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-app="app">
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
@@ -350,6 +350,272 @@
                             <div class="box-header with-border">
                                 <h4 class="box-title pull-left"><strong>Borang Pelan Perkhidmatan Individu dan Keluarga (PPIK)</strong></h4>
                             </div>
+                            <div class="box-body">
+                                <div id="rootwizard">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="bar" class="progress">
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul class="nav nav-pills nav-justified">
+                                                <li><a href="#tab1" data-toggle="tab">Butiran Murid</a></li>
+                                                <li><a href="#tab2" data-toggle="tab">Maklumat Mesyuarat</a></li>
+                                                <li><a href="#tab3" data-toggle="tab">Tahap Perkembangan Terkini dan Kerperluan Individu</a></li>
+                                                <li><a href="#tab4" data-toggle="tab">Matlamat Tahunan dan Objektif</a></li>
+                                                <li><a href="#tab5" data-toggle="tab">Keperluan Ibu Bapa Terhadap Pengajaran Anak di Rumah</a></li>
+                                                <li><a href="#tab6" data-toggle="tab">Laporan Perkembangan untuk Ibu Bapa</a></li>
+                                                <li><a href="#tab7" data-toggle="tab">Kakitangan yang Menghadiri Mesyuarat</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <form class="form-horizontal">
+                                        <div class="tab-content">
+                                            <div class="tab-pane" id="tab1">
+                                                <h4><strong>Bahagian 1: Butiran Murid</strong></h4>
+                                                <div class="box-body">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Nama Pelajar</label>
+                                                        <div class="col-sm-10">
+                                                            <input class="form-control" name="" type="text" value="Syazwan Iman" disabled>
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Tarikh Lahir</label>
+                                                        <div class="date col-sm-10">
+                                                            <input type="text" class="form-control" id="datepicker" value="27/11/2010" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">No. Telefon Rumah</label>
+                                                        <div class="col-sm-10">
+                                                            <input class="form-control" name="" type="text" value="0696317553" disabled>
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Masalah Kesihatan</label>
+                                                        <div class="col-sm-10">
+                                                            <textarea class="form-control" rows="5" placeholder="" disabled>tiada masalah</textarea>
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Nama Bapa</label>
+                                                        <div class="col-sm-10">
+                                                            <input class="form-control" name="" type="text" value="Mohd Azlisah Rahman" disabled>
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">No. Telefon Bapa</label>
+                                                        <div class="col-sm-10">
+                                                            <input class="form-control" name="" type="text" value="01386823023" disabled>
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Nama Ibu</label>
+                                                        <div class="col-sm-10">
+                                                            <input class="form-control" name="" type="text" value="Fazilah Bt Ahmad" disabled>
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">No. Telefon Ibu</label>
+                                                        <div class="col-sm-10">
+                                                            <input class="form-control" name="" type="text" value="01920149248" disabled>
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Alamat</label>
+                                                        <div class="col-sm-10">
+                                                            <textarea class="form-control" rows="5" placeholder="" disabled>16-2-4 Kelumpuk Kenari A, Jalan 14/56 Keramat Wangsa WP, KL 54200</textarea>
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab2">
+                                                <h4><strong>Bahagian 2: Maklumat Mesyuarat</strong></h4>
+                                                <div class="box-body">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Tarikh Mesyuarat</label>
+                                                        <div class="date col-sm-10">
+                                                            <input type="text" class="form-control datepicker">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Jenis Mesyuarat</label>
+                                                        <div class="col-sm-10">
+                                                            <label class="checkbox-inline"><input type="checkbox" value="">Permulaan</label>
+                                                            <label class="checkbox-inline"><input type="checkbox" value="">Rebiu Atas Permintaan</label>
+                                                            <label class="checkbox-inline"><input type="checkbox" value="">Penilaian Berkala</label>
+                                                            <label class="checkbox-inline"><input type="checkbox" value="">Penilaian Semula</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Tarikh Perlaksanaan PPIK</label>
+                                                        <div class="date col-sm-10">
+                                                            <input type="text" class="form-control datepicker">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Jangkaan Tarikh Rebiu</label>
+                                                        <div class="date col-sm-10">
+                                                            <input type="text" class="form-control datepicker">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Jangkaan Tarikh Mesyuarat Penilaian Semula</label>
+                                                        <div class="date col-sm-10">
+                                                            <input type="text" class="form-control datepicker">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Maklumat Lain</label>
+                                                        <div class="date col-sm-10">
+                                                            <textarea class="form-control" rows="5" placeholder=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab3">
+                                                <h4><strong>Bahagian 3: Tahap Perkembangan Terkini dan Kerperluan Individu</strong></h4>
+                                                <br>
+                                                <h5><strong>Pencapaian Akademik/Pendidikan dan Gaya Pembelajaran</strong></h5>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Kemahiran Bahasa dan Komunikasi</label>
+                                                    <div class="date col-sm-10">
+                                                        <textarea class="form-control" rows="5" placeholder=""></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Kemahiran Adaptif</label>
+                                                    <div class="date col-sm-10">
+                                                        <textarea class="form-control" rows="5" placeholder=""></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Kemahiran Kognitif</label>
+                                                    <div class="date col-sm-10">
+                                                        <textarea class="form-control" rows="5" placeholder=""></textarea>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <h5><strong>Perkembangan Sosial</strong></h5>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Kemahiran Sosio-Emosi</label>
+                                                    <div class="date col-sm-10">
+                                                        <textarea class="form-control" rows="5" placeholder=""></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Tingkah Laku</label>
+                                                    <div class="date col-sm-10">
+                                                        <textarea class="form-control" rows="5" placeholder=""></textarea>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <h5><strong>Perkembangan Fizikal</strong></h5>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Kemahiran Motor</label>
+                                                    <div class="date col-sm-10">
+                                                        <textarea class="form-control" rows="5" placeholder=""></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Kesihatan</label>
+                                                    <div class="date col-sm-10">
+                                                        <textarea class="form-control" rows="5" placeholder=""></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab4" ng-controller="PPIKCtrl">
+                                                <h4><strong>Bahagian 4: Maklumat Tahunan dan Objektif Jangka Pendek Yang Boleh Diukur/Penanda Aras</strong></h4>
+                                                <button class="btn btn-success pull-right" ng-click="addNewObjective()">Tambah Objektif</button>
+                                                <div class="clearfix"></div>
+                                                <br>
+                                                <div ng-repeat="(key, objective) in objectives">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Objektif Pengajaran {{ key + 1 }}</label>
+                                                        <div class="col-sm-7">
+                                                            <input class="form-control" name="" type="text">
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <button class="btn btn-danger" ng-click="removeObjective()" ng-show="objectives.length>1">Buang Objektif</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Objektif Ibu Bapa</label>
+                                                        <div class="date col-sm-7">
+                                                            <textarea class="form-control" rows="5" placeholder=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn btn-success pull-right" ng-click="addNewPenandaAras(key)">Tambah Penanda Aras</button>
+                                                    <div class="clearfix"></div>
+                                                    <br>
+                                                    <div ng-repeat="(key_pa, penandaAras) in objective.penandaAras">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">Penanda Aras {{ key_pa + 1 }}</label>
+                                                            <div class="col-sm-7">
+                                                                <input class="form-control" name="" type="text">
+                                                                <span class="help-block"></span>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <button class="btn btn-danger" ng-click="removePenandaAras(key)" ng-show="objective.penandaAras.length>1">Buang Penanda Aras</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">Kriteria</label>
+                                                            <div class="col-sm-3">
+                                                                <input class="form-control" name="" type="text">
+                                                                <span class="help-block"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">Bagaimana</label>
+                                                            <div class="col-sm-3">
+                                                                <input class="form-control" name="" type="text">
+                                                                <span class="help-block"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">Bila</label>
+                                                            <div class="col-sm-3">
+                                                                <input class="form-control" name="" type="text">
+                                                                <span class="help-block"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab5">
+                                                <h4><strong>Bahagian 5: Keperluan Ibu Bapa Terhadap Pengajaran Anak di Rumah</strong></h4>
+                                            </div>
+                                            <div class="tab-pane" id="tab6">
+                                                <h4><strong>Bahagian 6: Laporan Perkembangan untuk Ibu Bapa</strong></h4>
+                                            </div>
+                                            <div class="tab-pane" id="tab7">
+                                                <h4><strong>Bahagian 7: Kakitangan yang Menghadiri Mesyuarat</strong></h4>
+                                            </div>
+                                            <ul class="pager wizard">
+                                                <li class="previous first" style="display:none;"><a href="#">First</a></li>
+                                                <li class="previous"><a href="#">Previous</a></li>
+                                                <li class="next last" style="display:none;"><a href="#">Last</a></li>
+                                                <li class="next"><a href="#">Next</a></li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -396,7 +662,7 @@
     </div>
     <!-- ./wrapper -->
     <!-- jQuery 2.2.3 -->
-    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../plugins/jquery/dist/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -408,15 +674,60 @@
     <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
     <script src="../plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="../plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="../plugins/angular/angular.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../dist/js/app.min.js"></script>
     <script type="text/javascript">
         $(function () {
             $("#table").DataTable();
 
-            $('#datepicker').datepicker({
+            $('.datepicker').datepicker({
                 autoclose: true
             });
+        });
+
+        $(document).ready(function() {
+            $('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
+                var $total = navigation.find('li').length;
+                var $current = index+1;
+                var $percent = ($current/$total) * 100;
+                $('#rootwizard .progress-bar').css({width:$percent+'%'});
+            }});
+        });
+
+        var app = angular.module('app', []);
+
+        app.controller('PPIKCtrl', function($scope) {
+
+            $scope.objectives = 
+            [{
+                id:1,
+                penandaAras: [{
+                    id: 1
+                }]
+            }];
+      
+            $scope.addNewObjective = function() {
+                var newItemNo = $scope.objectives.length+1;
+                $scope.objectives.push({'id': newItemNo, 'penandaAras': [{'id': 1}]});
+            };
+        
+            $scope.removeObjective = function() {
+                var lastItem = $scope.objectives.length-1;
+                $scope.objectives.splice(lastItem);
+            };
+
+            $scope.addNewPenandaAras = function(obj) {
+                var newItemNo = $scope.objectives[obj].penandaAras.length+1;
+                $scope.objectives[obj].penandaAras.push({'id': newItemNo});
+            }
+
+            $scope.removePenandaAras = function(obj) {
+                var lastItem = $scope.objectives[obj].penandaAras.length-1;
+                $scope.objectives[obj].penandaAras.splice(lastItem);
+            }
+      
         });
     </script>
 </body>
