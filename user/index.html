@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <base href="file:///C:/laragon/www/pk/">
+    <div ng-include="'templates/head.html'"></div>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini" ng-app="myApp">
+    <div class="wrapper">
+        
+        <!-- header -->
+        <div ng-include="'templates/header.html'"></div>
+ 
+        <!-- side-bar -->
+        <div ng-include="'templates/side-bar.html'"></div>
+        
+        <!-- edit Modal -->
+        <div ng-include="'user/edit.html'"></div>
+        
+
+        
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- //CONTAIN START HERE -->
+
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Pengurusan Pengguna
+                    <small>Menguruskan akaun pengguna</small>
+                </h1>
+            </section>
+
+            <!-- Main content -->
+            <section class="content"  ng-controller="userCtrl as us">
+                <div class="row">
+
+                    <div class="col-xs-12">
+                      <div class="box">
+                        <div class="box-header">
+                            <a class="btn btn-sm btn-success" href="user/create.html">Tambah Pengguna</a>
+                        </div>
+                        <div class="box-header">
+                          <h3 class="box-title">Total: {{us.users.length}} of {{us.users.length}}</h3>
+
+                          <div class="box-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                              <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" ng-model="search">
+
+                              <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr>
+                                      <th>No</th>
+                                      <th>Name</th>
+                                      <th>Email</th>
+                                      <th>Role</th>
+                                      <th>Status</th>
+                                      <th></th>
+                                    </tr>
+                                    <tr ng-repeat="user in us.users">
+                                      <td><span>{{$index+1}}</span></td>
+                                      <td>{{user.name}}</td>
+                                      <td>{{user.email}}</td>
+                                      <td>{{user.role}}</td>
+                                      <td><span class="label label-success">{{user.status}}</span></td>
+                                      <td>
+                                      <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editModal">Edit</button>
+                                      <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                      </div>
+                      <!-- /.box -->
+                    </div>
+
+                </div>
+            </section>
+            <!-- /.content -->
+
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- ./wrapper -->
+    
+    <!-- footer -->  
+
+    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+        
+        angular.module('myApp', [])
+            .controller('userCtrl', userCtrl);
+
+        function userCtrl($scope, $http) {
+            var us = this
+            $http.get("data/users.json")
+            .success(function(response) {
+                console.log("Success")
+                us.users = response.employees
+                console.log(us.users)
+            })
+            .error(function(response) {
+                console.log("Failed")
+                console.log(response)
+                /* Act on the event */
+            });
+        }
+
+    </script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/app.min.js"></script>
+
+
+</body>
+
+</html>

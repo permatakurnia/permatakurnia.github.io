@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="file:///C:/laragon/www/pk/">
+    <div ng-include="'templates/head.html'"></div>
+</head>
+<body class="hold-transition skin-blue sidebar-mini" ng-app="myApp">
+    <div class="wrapper">
+        
+        <!-- header -->
+        <div ng-include="'templates/header.html'"></div>
+ 
+        <!-- side-bar -->
+        <div ng-include="'templates/side-bar.html'"></div>
+        
+        <!-- edit Modal -->
+        <div ng-include="'class/edit.html'"></div>
+        
+        <!-- edit Teacher Modal -->
+        <div ng-include="'class/teacherModal.html'"></div>
+        
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" ng-controller="classCtrl as cc">
+            <!-- //CONTAIN START HERE -->
+
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Butiran Kelas {{cc.classes[0].name}}
+                    <small>Menguruskan Kelas  {{cc.classes[0].name}}</small>
+                </h1>
+            </section>
+
+            <!-- Main content -->
+            <section class="content"  >
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon">
+                                <h4>Logo Kelas</h4>
+                            </span>
+                            <div class="info-box-content">
+                                <a class="btn btn-sm btn-success pull-right" data-toggle="modal" data-target="#editClass">Ubah Butiran Kelas</a>
+                                <span class="info-box-number">Kelas {{cc.classes[0].name}}</span>
+                                <!-- <div class="pull-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="btn btn-success btn-sm raised dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu text-center">
+                                            <li><a href="">Kemaskini</a></li>        
+                                            <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
+                                        </ul>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-9 tab-content">
+                      
+                      <div role="tabpanel" class="tab-pane active" id="all">
+                        <div role="tabpanel" class="tab-pane" ng-include="'class/_partials/teacher.html'"></div>
+
+                        <div role="tabpanel" class="tab-pane" ng-include="'class/_partials/student.html'"></div>
+
+                        <div role="tabpanel" class="tab-pane" ng-include="'class/_partials/media.html'"></div>
+                      </div>
+                      
+                      <div role="tabpanel" class="tab-pane" id="teacherBox" ng-include="'class/_partials/teacher.html'"></div>
+
+                      <div role="tabpanel" class="tab-pane" id="studentBox" ng-include="'class/_partials/student.html'"></div>
+                      
+                      <div role="tabpanel" class="tab-pane" id="mediaBox" ng-include="'class/_partials/media.html'"></div>
+                    </div>
+
+                    <!-- side-bar -->
+                    <div class="col-md-3" ng-include="'class/mini-side-bar.html'"></div>
+
+                </div>
+            </section>
+            <!-- /.content -->
+
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- ./wrapper -->
+    
+    <!-- footer -->  
+
+    <!-- jQuery 2.2.3 -->
+    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <!-- Bootstrap 3.3.6 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/app.min.js"></script>
+    <script src="plugins/dropzone/dist/min/dropzone.min.js"></script>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+        
+        angular.module('myApp', [])
+            .controller('classCtrl', classCtrl);
+
+        function classCtrl($scope, $http) {
+            var vm = this
+            $http.get("data/class.json")
+            .success(function(response) {
+                console.log("Success")
+                console.log(vm.classes)
+                vm.classes = response.class
+            })
+            .error(function(response) {
+                console.log("Failed")
+                console.log(response)
+                /* Act on the event */
+            });
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

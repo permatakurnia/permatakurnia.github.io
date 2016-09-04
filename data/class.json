@@ -1,0 +1,41 @@
+{
+  "class" : [
+    {
+      "id": 1,
+      "name": "Harmonika",
+      "teachers": [
+        {"name":"Tajuddin","designation":"Guru Kelas"},
+        {"name":"Shikah","designation":"Penolong Guru Kelas"}
+      ],
+      "students": [
+        {"name":"Zulaikha","attendance":"Tidak Hadir"},
+        {"name":"Pian","attendance":"Hadir"},
+        {"name":"Zainol","attendance":"Hadir"}
+      ]
+    },{
+      "id": 2,
+      "name": "Tamborin",
+      "teachers": [
+        {"name":"Syafikah","designation":"Guru Kelas"},
+        {"name":"Annur","designation":"Penolong Guru Kelas"}
+      ],
+      "students": [
+        {"name":"Zul","attendance":"Hadir"},
+        {"name":"Saiful","attendance":"Hadir"},
+        {"name":"Zainolika","attendance":"Tidak Hadir"}
+      ]
+    },{
+      "id": 3,
+      "name": "Anggur",
+      "teachers": [
+        {"name":"Khairul","designation":"Guru Kelas"},
+        {"name":"Nisa","designation":"Penolong Guru Kelas"}
+      ],
+      "students": [
+        {"name":"Amir","attendance":"Hadir"},
+        {"name":"Akmal","attendance":"Tidak Hadir"},
+        {"name":"Akmaliah","attendance":"Hadir"}
+      ]
+    }
+  ]
+}
