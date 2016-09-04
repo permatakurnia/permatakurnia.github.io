@@ -1,9 +1,10 @@
 
-<div class="box">
-  <div class="box-header">
-      <a class="btn btn-sm btn-success pull-right" data-toggle="modal" data-target="#teacherModal">Tambah Guru</a>
+<div class="box box-info">
+  <div class="box-header ">
+    <h3 class="box-title"><strong>Senarai Guru </strong></h3>
   </div>
   <div class="box-header">
+    <a class="btn btn-sm btn-success pull-right" data-toggle="modal" data-target="#teacherModal">Tambah Guru</a>
     <h3 class="box-title">Keseluruhan: {{cc.classes[0].students.length}} of {{cc.classes[0].students.length}}</h3>
   </div>
   <!-- /.box-header -->
@@ -17,7 +18,7 @@
               </tr>
               <tr ng-repeat="teacher in cc.classes[0].teachers">
                 <td>{{$index+1}}</td>
-                <td><a href="#">{{teacher.name}}</a> </td>
+                <td><a href="">{{teacher.name}}</a> </td>
                 <td>{{teacher.designation}}</td>
               </tr>
           </tbody>

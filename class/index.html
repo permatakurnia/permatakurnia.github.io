@@ -89,12 +89,9 @@
     
     <!-- footer -->  
 
-    <!-- jQuery 2.2.3 -->
-    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <script src="plugins/jqueryUI/jquery-ui.min.js"></script>
+    <script src="plugins/angular/angular.min.js"></script>
     <script>
         $.widget.bridge('uibutton', $.ui.button);
         
@@ -102,12 +99,12 @@
             .controller('classCtrl', classCtrl);
 
         function classCtrl($scope, $http) {
-            var us = this
+            var vm = this
             $http.get("data/class.json")
             .success(function(response) {
                 console.log("Success")
-                us.classes = response.class
-                console.log(us.classes)
+                console.log(vm.classes)
+                vm.classes = response.class
             })
             .error(function(response) {
                 console.log("Failed")
@@ -115,13 +112,13 @@
                 /* Act on the event */
             });
         }
-
     </script>
-    <!-- Bootstrap 3.3.6 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
     <script src="dist/js/app.min.js"></script>
-
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="plugins/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 
 </body>
 

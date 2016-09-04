@@ -4,3 +4,4 @@ Firefox enable file url
 3. search : 
 security.fileuri.strict_origin_policy
 4. change the valu from tru to FALSE(double click)
+
