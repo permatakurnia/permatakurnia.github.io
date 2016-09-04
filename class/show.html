@@ -17,8 +17,8 @@
         <!-- edit Modal -->
         <div ng-include="'edit.html'"></div>
         
-        <!-- edit Student Modal -->
-        <div ng-include="'editStudentModal.html'"></div>
+        <!-- edit Teacher Modal -->
+        <div ng-include="'teacherModal.html'"></div>
         
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" ng-controller="classCtrl as cc">
@@ -38,11 +38,12 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="info-box">
                             <span class="info-box-icon">
-                                <h4>Gambar Kelas</h4>
+                                <h4>Logo Kelas</h4>
                             </span>
                             <div class="info-box-content">
+                                <a class="btn btn-sm btn-success pull-right" data-toggle="modal" data-target="#editClass">Ubah Butiran Kelas</a>
                                 <span class="info-box-number">Kelas {{cc.classes[0].name}}</span>
-                                <div class="pull-right">
+                                <!-- <div class="pull-right">
                                     <div class="dropdown">
                                         <a href="#" class="btn btn-success btn-sm raised dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                             <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
@@ -52,7 +53,7 @@
                                             <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
