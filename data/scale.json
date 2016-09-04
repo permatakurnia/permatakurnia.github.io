@@ -1,0 +1,69 @@
+{
+	"skills" : [
+		{
+			"title":"Latihan ke tandas",
+			"matter":[
+				{"description" : "Memakai lampin pakai buang / Tidak mahu duduk di mangkuk tandas"},
+				{"description" : "Memerlukan bantuan untuk ke tandas"},
+				{"description" : "Memerlukan arahan ke tandas"},
+				{"description" : "Boleh berdikari ke tandas"}
+			]
+		},{
+			"title":"Tingkah laku mencabar",
+			"matter":[
+				{"description" : "Tiada isu tingkah laku"},
+				{"description" : "Tingkah laku negatif minima"},
+				{"description" : "Tingkah laku negatif"},
+				{"description" : "Tingkah laku negatif mencabar"}
+			]
+		},{
+			"title":"Mengikut 1 langkah arahan",
+			"matter":[
+				{"description" : "Tidak mengikut 1 langkah arahan"},
+				{"description" : "Mengikut 1 langkah arahan dengan separa bantuan"},
+				{"description" : "oleh mengikut 1 langkah arahan tanpa bantuan"}
+			]
+		},{
+			"title":"Tugasan di meja",
+			"matter":[
+				{"description" : "Melakukan tugasan dengan bantuan sepenuhnya"},
+				{"description" : "Menjalankan tugasan dengan bantuan modelling"},
+				{"description" : "Menjalankan tugasan dengan separa bantuan (gesture/verbal)"},
+				{"description" : "Berdikari dalam menjalankan tugasan di meja"}
+			]
+		},{
+			"title":"communication",
+			"matter":[
+				{"title" : "Getting people's attention"},
+				{"title" : "Greeting"},
+				{"title" : "Naming"},
+				{"title" : "Requesting for item/activity"},
+				{"title" : "Rejecting item/activity"},
+				{"title" : "Commenting"},
+				{"title" : "Sharing Short Story"},
+				{"title" : "Providing information"},
+				{"title" : "Obtaining Information from others"}
+			]
+		},{
+			"title":"numerasi",
+			"matter" : [
+				{"title" : "Memadankan nombor"},
+				{"title" : "Mengira objek"},
+				{"title" : "Memadankan nombor kepada kuantiti"},
+				{"title" : "Mengira serta menulis "},
+				{"title" : "Operasi tambah bahan visual"},
+				{"title" : "Operasi tambah bahan maujud"},
+				{"title" : "Operasi tambah congak"},
+				{"title" : "Operasi tolak bahan visual"},
+				{"title" : "Operasi tolak garis nombor"},
+				{"title" : "Operasi tolak congak"},
+				{"title" : "Operasi tambah bentuk lazim"},
+				{"title" : "Operasi tolak bentuk lazim "},
+				{"title" : "Penyelesaian masalah operasi tolak "},
+				{"title" : "Operasi darab "},
+				{"title" : "Operasi bahagi "}
+			]
+		}
+	]
+
+}

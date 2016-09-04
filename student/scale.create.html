@@ -27,7 +27,7 @@
   <![endif]-->
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-app="myApp">
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
@@ -344,29 +344,94 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" ng-controller="scaleCtrl as sc">
                     <div class="col-md-9">
-                      <div class="box box-solid">
-                            <div class="box-header with-border">
-                                <h4 class="box-title"><strong>Maklumat Pelajar</strong></h4>
-                                <a href="" class="btn btn-success btn-sm pull-right"><i class="ion ion-ios-plus-outline"></i> Kemaskini Maklumat Pelajar</a>
-                            </div><!-- /.box-header -->
-                            <div class="box-body no-padding">
-                                <ul class="nav nav-pills nav-stacked custom">
-                                    <li class="row">
-                                        <span class="text-attribute col-md-6 text-right">Nama Pelajar</span>
-                                        <span class="col-md-6 text-left">Syazwan Iman</span>
-                                    </li>
-                                    <li class="row">
-                                        <span class="text-attribute col-md-6 text-right">Tarikh Lahir</span>
-                                        <span class="col-md-6 text-left">27 November 2009</span>
-                                    </li>
-                                    <li class="row">
-                                        <span class="text-attribute col-md-6 text-right">To be added later</span>
-                                        <span class="col-md-6 text-left"></span>
-                                    </li>
-                                </ul>
-                          </div>
+                        <div class="box box-solid">
+                            <div class="box-header text-right with-border">
+                                <h4 class="box-title pull-left"><strong>Skala Kemahiran Pelajar</strong></h4>
+                            </div>
+                            <div class="box-body">
+                                <table class="table table-hover table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2" class="text-center">Pilih mana yang berkenaan (Boleh pilih lebih dari satu)</th>
+                                        </tr>                                         
+                                    </thead>
+                                    <thead>
+                                         <tr>
+                                            <th class="text-center">Perkara</th>
+                                            <th class="text-center">Keterangan</th>
+                                        </tr>                                         
+                                    </thead>
+                                    <tbody >
+                                        <tr ng-repeat="scale in sc.skills[0].matter">
+                                            <td rowspan="4" ng-if="$index==0" style="vertical-align:middle">{{sc.skills[0].title}}</td>
+                                            <td><input type="checkbox" > {{scale.description}}</input>
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat="scale in sc.skills[1].matter">
+                                            <td rowspan="4" ng-if="$index==0" style="vertical-align:middle">{{sc.skills[1].title}}</td>
+                                            <td><input type="checkbox" > {{scale.description}}</input>
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat="scale in sc.skills[2].matter">
+                                            <td rowspan="3" ng-if="$index==0" style="vertical-align:middle">{{sc.skills[2].title}}</td>
+                                            <td><input type="checkbox" > {{scale.description}}</input>
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat="scale in sc.skills[3].matter">
+                                            <td rowspan="4" ng-if="$index==0" style="vertical-align:middle">{{sc.skills[3].title}}</td>
+                                            <td><input type="checkbox" > {{scale.description}}</input>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <hr>
+                                
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2"  ><h4>Pilih satu sahaja <br>Penerangan : (0 = Tiada, 1 = Sedang Menguasai, 2 = Telah Menguasai)</h4></th>
+                                        </tr>                                         
+                                    </thead>
+                                    <thead>
+                                         <tr>
+                                            <th rowspan="2"  class="text-center" style="vertical-align:middle">Perkara</th>
+                                            <th colspan="4" class="text-center" >Skala</th>
+                                        </tr>                                         
+                                        <tr>
+                                            <th>1</th>
+                                            <th>2</th>
+                                            <th>3</th>M
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th colspan="4" class="text-center">{{sc.skills[4].title|uppercase}}</th>
+                                        </tr>  
+                                        <tr  ng-repeat="scale in sc.skills[4].matter">
+                                            <td >{{scale.title}}</td>
+                                            <td><input type="radio" name="{{scale.title}}"></</td>
+                                            <td><input type="radio" name="{{scale.title}}"></</td>
+                                            <td><input type="radio" name="{{scale.title}}"></</td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="4" class="text-center">{{sc.skills[5].title|uppercase}}</th>
+                                        </tr>
+                                        <tr  ng-repeat="scale in sc.skills[5].matter">
+                                            <td>{{scale.title}}</td>
+                                            <td><input type="radio" name="{{scale.title}}"></input></td>
+                                            <td><input type="radio" name="{{scale.title}}"></input></td>
+                                            <td><input type="radio" name="{{scale.title}}"></input></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="row text-center">
+                                    <button class="btn btn-danger">Reset</button>
+                                    <button class="btn btn-success">Hantar</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -374,7 +439,7 @@
                         <div class="box box-solid">
                             <div class="box-body no-padding">
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li class="active">
+                                    <li class="">
                                         <a href="show.html"><i class="fa fa-user"></i> Maklumat Pelajar</a>
                                     </li>
                                     <li class="">
@@ -389,14 +454,14 @@
                                     <li class="">
                                         <a href="attendance.html"><i class="fa fa-check"></i> Kehadiran </a>
                                     </li>
-                                    <li class="">
+                                    <li class="active">
                                         <a href="ppik.html"><i class="fa fa-dot-circle-o"></i> Pelan Perkhidmatan Individu Dan Keluarga (PPIK) </a>
                                     </li>
                                     <li class="">
                                         <a href="dokumen.html"><i class="fa fa-file-text"></i> Dokumen </a>
                                     </li>
                                     <li class="">
-                                        <a href="scale.html"><i class="fa fa-line-chart"></i> Pencapaian Kemahiran </a>
+                                        <a href=""><i class="fa fa-line-chart"></i> Pencapaian Kemahiran </a>
                                     </li>
                                     <li class="">
                                         <a href="gallery.html"><i class="fa fa-picture-o"></i> Gallery </a>
@@ -411,30 +476,26 @@
         </div>
         <!-- /.content-wrapper -->
     </div>
-    <!-- ./wrapper -->
-    <!-- jQuery 2.2.3 -->
     <script src="../plugins/jquery/dist/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-        $.widget.bridge('uibutton', $.ui.button);
-    </script>
-    <!-- Bootstrap 3.3.6 -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
-    <script src="../plugins/datepicker/bootstrap-datepicker.js"></script>
-    <!-- AdminLTE App -->
     <script src="../dist/js/app.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $("#table").DataTable();
+        <script src="../plugins/angular/angular.min.js"></script>
 
-            $('#datepicker').datepicker({
-                autoclose: true
-            });
-        });
+    <script>  
+        $.widget.bridge('uibutton', $.ui.button);      
+        angular.module('myApp', [])
+            .controller('scaleCtrl', scaleCtrl);
+
+        function scaleCtrl($scope, $http) {
+            var us = this
+            $http.get("../data/scale.json")
+             .then(function(response) {
+                 us.skills = response.data.skills
+                 console.log(us.skills)
+             })
+        }
+
     </script>
 </body>
 

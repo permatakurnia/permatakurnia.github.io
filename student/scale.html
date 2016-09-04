@@ -346,27 +346,93 @@
                 </div>
                 <div class="row">
                     <div class="col-md-9">
-                      <div class="box box-solid">
-                            <div class="box-header with-border">
-                                <h4 class="box-title"><strong>Maklumat Pelajar</strong></h4>
-                                <a href="" class="btn btn-success btn-sm pull-right"><i class="ion ion-ios-plus-outline"></i> Kemaskini Maklumat Pelajar</a>
-                            </div><!-- /.box-header -->
-                            <div class="box-body no-padding">
-                                <ul class="nav nav-pills nav-stacked custom">
-                                    <li class="row">
-                                        <span class="text-attribute col-md-6 text-right">Nama Pelajar</span>
-                                        <span class="col-md-6 text-left">Syazwan Iman</span>
-                                    </li>
-                                    <li class="row">
-                                        <span class="text-attribute col-md-6 text-right">Tarikh Lahir</span>
-                                        <span class="col-md-6 text-left">27 November 2009</span>
-                                    </li>
-                                    <li class="row">
-                                        <span class="text-attribute col-md-6 text-right">To be added later</span>
-                                        <span class="col-md-6 text-left"></span>
-                                    </li>
-                                </ul>
-                          </div>
+                        <div class="box box-solid">
+                            <div class="box-header text-right with-border">
+                                <h4 class="box-title pull-left"><strong>Skala Kemahiran Pelajar</strong></h4>
+                                <a href="scale.create.html" class="btn btn-success btn-sm"><i class="ion ion-ios-plus-outline"></i> Mengira Skala Kemahiran</a>
+                            </div>
+                            <div class="box-body">
+                                <table id="table" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Tarikh Diisi</th>
+                                            <th>Disediakan Oleh</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>27 July 2016</td>
+                                            <td>Sri Nursyafika Ahmad Damanhuri</td>
+                                            <td class="text-center">
+                                                <div class="dropdown">
+                                                    <a href="#" class="btn btn-success btn-sm raised dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="../dist/pdf/ppik.pdf" target="_blank">Papar</a></li>
+                                                        <li><a href="">Edit</a></li>
+                                                        <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
+                                                    </ul>
+                                                    <div class="modal fade" id="delete-work-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                                    <h4 class="modal-title" id="myModalLabel">Padam </h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Anda pasti untuk padam PPIK ini?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Tutup</button>
+                                                                    <a href="" class="btn btn-success btn-sm raised">Padam</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>27 Febuary 2017</td>
+                                            <td>Puteri Aliyah Abd Samad</td>
+                                            <td class="text-center">
+                                                <div class="dropdown">
+                                                    <a href="#" class="btn btn-success btn-sm raised dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="../dist/pdf/ppik.pdf" target="_blank">Papar</a></li>
+                                                        <li><a href="">Edit</a></li>
+                                                        <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
+                                                    </ul>
+                                                    <div class="modal fade" id="delete-work-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                                    <h4 class="modal-title" id="myModalLabel">Padam </h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Anda pasti untuk padam PPIK ini?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Tutup</button>
+                                                                    <a href="" class="btn btn-success btn-sm raised">Padam</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
@@ -374,7 +440,7 @@
                         <div class="box box-solid">
                             <div class="box-body no-padding">
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li class="active">
+                                    <li class="">
                                         <a href="show.html"><i class="fa fa-user"></i> Maklumat Pelajar</a>
                                     </li>
                                     <li class="">
@@ -389,14 +455,14 @@
                                     <li class="">
                                         <a href="attendance.html"><i class="fa fa-check"></i> Kehadiran </a>
                                     </li>
-                                    <li class="">
+                                    <li class="active">
                                         <a href="ppik.html"><i class="fa fa-dot-circle-o"></i> Pelan Perkhidmatan Individu Dan Keluarga (PPIK) </a>
                                     </li>
                                     <li class="">
                                         <a href="dokumen.html"><i class="fa fa-file-text"></i> Dokumen </a>
                                     </li>
                                     <li class="">
-                                        <a href="scale.html"><i class="fa fa-line-chart"></i> Pencapaian Kemahiran </a>
+                                        <a href=""><i class="fa fa-line-chart"></i> Pencapaian Kemahiran </a>
                                     </li>
                                     <li class="">
                                         <a href="gallery.html"><i class="fa fa-picture-o"></i> Gallery </a>
