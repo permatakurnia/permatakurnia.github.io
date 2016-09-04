@@ -31,6 +31,8 @@
     "documentation"
   ],
   "dependencies": {
-    "dropzone": "^4.3.0"
+    "dropzone": "^4.3.0",
+    "twitter-bootstrap-wizard": "1.3.2",
+    "jquery": "2.2.4"
   }
 }
