@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <div ng-include="'../templates/head.html'"></div>
-
+    <base href="file:///C:/laragon/www/pk/">
+    <div ng-include="'templates/head.html'"></div>
 </head>
 <body class="hold-transition skin-blue sidebar-mini" ng-app="myApp">
     <div class="wrapper">
         
         <!-- header -->
-        <div ng-include="'../templates/header.html'"></div>
+        <div ng-include="'templates/header.html'"></div>
  
         <!-- side-bar -->
-        <div ng-include="'../templates/side-bar.html'"></div>
+        <div ng-include="'templates/side-bar.html'"></div>
         
         <!-- edit Modal -->
-        <div ng-include="'edit.html'"></div>
+        <div ng-include="'class/edit.html'"></div>
         
         <!-- edit Teacher Modal -->
-        <div ng-include="'teacherModal.html'"></div>
+        <div ng-include="'class/teacherModal.html'"></div>
         
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" ng-controller="classCtrl as cc">
@@ -64,22 +63,22 @@
                     <div class="col-md-9 tab-content">
                       
                       <div role="tabpanel" class="tab-pane active" id="all">
-                        <div role="tabpanel" class="tab-pane" ng-include="'_partials/teacher.html'"></div>
+                        <div role="tabpanel" class="tab-pane" ng-include="'class/_partials/teacher.html'"></div>
 
-                        <div role="tabpanel" class="tab-pane" ng-include="'_partials/student.html'"></div>
+                        <div role="tabpanel" class="tab-pane" ng-include="'class/_partials/student.html'"></div>
 
-                        <div role="tabpanel" class="tab-pane" ng-include="'_partials/media.html'"></div>
+                        <div role="tabpanel" class="tab-pane" ng-include="'class/_partials/media.html'"></div>
                       </div>
                       
-                      <div role="tabpanel" class="tab-pane" id="teacherBox" ng-include="'_partials/teacher.html'"></div>
+                      <div role="tabpanel" class="tab-pane" id="teacherBox" ng-include="'class/_partials/teacher.html'"></div>
 
-                      <div role="tabpanel" class="tab-pane" id="studentBox" ng-include="'_partials/student.html'"></div>
+                      <div role="tabpanel" class="tab-pane" id="studentBox" ng-include="'class/_partials/student.html'"></div>
                       
-                      <div role="tabpanel" class="tab-pane" id="mediaBox" ng-include="'_partials/media.html'"></div>
+                      <div role="tabpanel" class="tab-pane" id="mediaBox" ng-include="'class/_partials/media.html'"></div>
                     </div>
 
                     <!-- side-bar -->
-                    <div class="col-md-3" ng-include="'mini-side-bar.html'"></div>
+                    <div class="col-md-3" ng-include="'class/mini-side-bar.html'"></div>
 
                 </div>
             </section>
@@ -93,16 +92,16 @@
     <!-- footer -->  
 
     <!-- jQuery 2.2.3 -->
-    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <!-- Bootstrap 3.3.6 -->
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="../dist/js/app.min.js"></script>
-    <script src="../plugins/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="dist/js/app.min.js"></script>
+    <script src="plugins/dropzone/dist/min/dropzone.min.js"></script>
     <script>
         $.widget.bridge('uibutton', $.ui.button);
         
@@ -111,7 +110,7 @@
 
         function classCtrl($scope, $http) {
             var vm = this
-            $http.get("../data/class.json")
+            $http.get("data/class.json")
             .success(function(response) {
                 console.log("Success")
                 console.log(vm.classes)
