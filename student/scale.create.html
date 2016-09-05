@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="file:///C:/laragon/www/pk/">
+    <div ng-include="'templates/head.html'"></div>
+    
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" ng-app="myApp">
+    
+    <div class="wrapper">
+        <!-- header -->
+        <div ng-include="'templates/header.html'"></div>
+ 
+        <!-- side-bar -->
+        <div ng-include="'templates/side-bar.html'"></div>
+
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Maklumat Pelajar
+                </h1>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon">
+                                <h4>Gambar Pelajar</h4>
+                            </span>
+                            <div class="info-box-content">
+                                <span class="info-box-number">Syazwan Iman</span>
+                                <div class="pull-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="btn btn-success btn-sm raised dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu text-center">
+                                            <li><a href="">Kemaskini</a></li>        
+                                            <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-controller="scaleCtrl as sc">
+                    <div class="col-md-9">
+                        <div class="box box-solid">
+                            <div class="box-header text-right with-border">
+                                <h4 class="box-title pull-left"><strong>Skala Kemahiran Pelajar</strong></h4>
+                            </div>
+                            <div class="box-body">
+                                <table class="table table-hover table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2" class="text-center">Pilih mana yang berkenaan (Boleh pilih lebih dari satu)</th>
+                                        </tr>                                         
+                                    </thead>
+                                    <thead>
+                                         <tr>
+                                            <th class="text-center">Perkara</th>
+                                            <th class="text-center">Keterangan</th>
+                                        </tr>                                         
+                                    </thead>
+                                    <tbody >
+                                        <tr ng-repeat="scale in sc.skills[0].matter">
+                                            <td rowspan="4" ng-if="$index==0" style="vertical-align:middle">{{sc.skills[0].title}}</td>
+                                            <td><input type="checkbox" > {{scale.description}}</input>
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat="scale in sc.skills[1].matter">
+                                            <td rowspan="4" ng-if="$index==0" style="vertical-align:middle">{{sc.skills[1].title}}</td>
+                                            <td><input type="checkbox" > {{scale.description}}</input>
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat="scale in sc.skills[2].matter">
+                                            <td rowspan="3" ng-if="$index==0" style="vertical-align:middle">{{sc.skills[2].title}}</td>
+                                            <td><input type="checkbox" > {{scale.description}}</input>
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat="scale in sc.skills[3].matter">
+                                            <td rowspan="4" ng-if="$index==0" style="vertical-align:middle">{{sc.skills[3].title}}</td>
+                                            <td><input type="checkbox" > {{scale.description}}</input>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <hr>
+                                
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2"  ><h4>Pilih satu sahaja <br>Penerangan : (0 = Tiada, 1 = Sedang Menguasai, 2 = Telah Menguasai)</h4></th>
+                                        </tr>                                         
+                                    </thead>
+                                    <thead>
+                                         <tr>
+                                            <th rowspan="2"  class="text-center" style="vertical-align:middle">Perkara</th>
+                                            <th colspan="4" class="text-center" >Skala</th>
+                                        </tr>                                         
+                                        <tr>
+                                            <th>1</th>
+                                            <th>2</th>
+                                            <th>3</th>M
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th colspan="4" class="text-center">{{sc.skills[4].title|uppercase}}</th>
+                                        </tr>  
+                                        <tr  ng-repeat="scale in sc.skills[4].matter">
+                                            <td >{{scale.title}}</td>
+                                            <td><input type="radio" name="{{scale.title}}"></</td>
+                                            <td><input type="radio" name="{{scale.title}}"></</td>
+                                            <td><input type="radio" name="{{scale.title}}"></</td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="4" class="text-center">{{sc.skills[5].title|uppercase}}</th>
+                                        </tr>
+                                        <tr  ng-repeat="scale in sc.skills[5].matter">
+                                            <td>{{scale.title}}</td>
+                                            <td><input type="radio" name="{{scale.title}}"></input></td>
+                                            <td><input type="radio" name="{{scale.title}}"></input></td>
+                                            <td><input type="radio" name="{{scale.title}}"></input></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="row text-center">
+                                    <button class="btn btn-danger">Reset</button>
+                                    <a href="student/scale.html" class="btn btn-success">Hantar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div ng-include="'student/mini-bar.html'"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <script src="plugins/jqueryUI/jquery-ui.min.js"></script>
+    <script src="plugins/angular/angular.min.js"></script>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+        
+        angular.module('myApp', [])
+            .controller('scaleCtrl', scaleCtrl);
+
+        function scaleCtrl($scope, $http) {
+            var us = this
+            $http.get("data/scale.json")
+             .then(function(response) {
+                 us.skills = response.data.skills
+                 console.log(us.skills)
+             })
+        }
+        $('#datepicker').datepicker({
+                autoclose: true
+        });
+
+    </script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/app.min.js"></script>
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+</body>
+
+</html>

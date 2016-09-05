@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="file:///C:/laragon/www/pk/">
+    <div ng-include="'templates/head.html'"></div>
+    
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" ng-app="myApp">
+    
+    <div class="wrapper">
+        <!-- header -->
+        <div ng-include="'templates/header.html'"></div>
+ 
+        <!-- side-bar -->
+        <div ng-include="'templates/side-bar.html'"></div>
+
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Maklumat Pelajar
+                </h1>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon">
+                                <h4>Gambar Pelajar</h4>
+                            </span>
+                            <div class="info-box-content">
+                                <span class="info-box-number">Syazwan Iman</span>
+                                <div class="pull-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="btn btn-success btn-sm raised dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu text-center">
+                                            <li><a href="">Kemaskini</a></li>        
+                                            <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="box box-solid">
+                            <div class="box-header text-right with-border">
+                                <h4 class="box-title pull-left"><strong>Skala Kemahiran Pelajar</strong></h4>
+                                <a href="student/scale.create.html" class="btn btn-success btn-sm"><i class="ion ion-ios-plus-outline"></i> Mengira Skala Kemahiran</a>
+                            </div>
+                            <div class="box-body">
+                                <table id="table" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Tarikh Diisi</th>
+                                            <th>Disediakan Oleh</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>27 July 2016</td>
+                                            <td>Sri Nursyafika Ahmad Damanhuri</td>
+                                            <td class="text-center">
+                                                <div class="dropdown">
+                                                    <a href="#" class="btn btn-success btn-sm raised dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="dist/pdf/ppik.pdf" target="_blank">Papar</a></li>
+                                                        <li><a href="">Edit</a></li>
+                                                        <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
+                                                    </ul>
+                                                    <div class="modal fade" id="delete-work-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                                    <h4 class="modal-title" id="myModalLabel">Padam </h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Anda pasti untuk padam PPIK ini?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Tutup</button>
+                                                                    <a href="" class="btn btn-success btn-sm raised">Padam</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>27 Febuary 2017</td>
+                                            <td>Puteri Aliyah Abd Samad</td>
+                                            <td class="text-center">
+                                                <div class="dropdown">
+                                                    <a href="#" class="btn btn-success btn-sm raised dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="icon ion-ios-gear-outline fa"></i>&nbsp;<span class="caret"></span>
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="dist/pdf/ppik.pdf" target="_blank">Papar</a></li>
+                                                        <li><a href="">Edit</a></li>
+                                                        <li><a href="#delete-work-2" data-toggle="modal">Padam</a></li>
+                                                    </ul>
+                                                    <div class="modal fade" id="delete-work-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                                    <h4 class="modal-title" id="myModalLabel">Padam </h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Anda pasti untuk padam PPIK ini?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Tutup</button>
+                                                                    <a href="" class="btn btn-success btn-sm raised">Padam</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div ng-include="'student/mini-bar.html'"></div>
+                    </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <script src="plugins/jqueryUI/jquery-ui.min.js"></script>
+    <script src="plugins/angular/angular.min.js"></script>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+        
+        angular.module('myApp', [])
+            .controller('userCtrl', userCtrl);
+
+        function userCtrl($scope, $http) {
+            var us = this
+            $http.get("data/users.json")
+            .success(function(response) {
+                console.log("Success")
+                us.users = response.employees
+                console.log(us.users)
+            })
+            .error(function(response) {
+                console.log("Failed")
+                console.log(response)
+                /* Act on the event */
+            });
+        }
+        $(function () {
+            $("#table").DataTable();
+        });
+        $('#datepicker').datepicker({
+                autoclose: true
+        });
+
+    </script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/app.min.js"></script>
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+</body>
+
+</html>

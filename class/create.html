@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="file:///C:/laragon/www/pk/">
+    <div ng-include="'templates/head.html'"></div>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini" ng-app="myApp">
+    <div class="wrapper">
+        
+        <!-- header -->
+        <div ng-include="'templates/header.html'"></div>
+ 
+        <!-- side-bar -->
+        <div ng-include="'templates/side-bar.html'"></div>
+         
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- #CONTENT -->
+
+            <!-- Content Header (Page header)-->
+            <section class="content-header">
+                <h1>
+                    Tambah Kelas
+                    <small>Tambah kelas baru </small>
+                </h1>
+            </section>
+
+            <!-- Main content -->
+            <section class="content"  ng-controller="userCtrl as us">
+                <div class="row">
+                    <div class="col-xs-12">
+                      <div class="box">
+                        <div class="box-header">
+                          <p>Isikan kesemua butiran</p>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">Nama Kelas</label>
+                              <div class="col-md-8">
+                                    <input type="text" name="name" class="form-control">
+                              </div>
+                              
+                                <label class="control-label col-md-4">Logo Kelas</label>
+                              <div id="dropzone" class="col-md-8">
+                                <form action="<?= $this->Url->build(['action' => 'documents', $vehicle->id]) ?>" class="dropzone" id="documents"></form>
+                              </div>
+                              <div class="text-center">
+                                  <a href="class/index.html" class="btn btn-danger">Batal</a>
+                                  <a href="class/index.html" class="btn btn-success">Hantar</a>
+                              </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                      </div>
+                      <!-- /.box -->
+                    </div>
+
+                </div>
+            </section>
+            <!-- /.content -->
+
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- ./wrapper -->
+
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <script src="plugins/jqueryUI/jquery-ui.min.js"></script>
+    <script src="plugins/angular/angular.min.js"></script>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+        
+        angular.module('myApp', []);
+    </script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/app.min.js"></script>
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="plugins/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+
+</body>
+
+</html>

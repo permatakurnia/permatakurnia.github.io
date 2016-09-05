@@ -2,22 +2,23 @@
 <html>
 <head>
 
-    <div ng-include="'../templates/head.html'"></div>
+    <base href="file:///C:/laragon/www/pk/">
+    <div ng-include="'templates/head.html'"></div>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini" ng-app="myApp">
     <div class="wrapper">
         
         <!-- header -->
-        <div ng-include="'../templates/header.html'"></div>
+        <div ng-include="'templates/header.html'"></div>
  
         <!-- side-bar -->
-        <div ng-include="'../templates/side-bar.html'"></div>
+        <div ng-include="'templates/side-bar.html'"></div>
         
         <!-- edit Modal -->
-        <div ng-include="'edit.html'"></div>
-        
-
+        <div ng-include="'user/edit.html'"></div>
+         <!-- delete Modal -->
+        <div ng-include="'user/delete.html'"></div>
         
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -38,7 +39,7 @@
                     <div class="col-xs-12">
                       <div class="box">
                         <div class="box-header">
-                            <a class="btn btn-sm btn-success" href="create.html">Tambah Pengguna</a>
+                            <a class="btn btn-sm btn-success" href="user/create.html">Tambah Pengguna</a>
                         </div>
                         <div class="box-header">
                           <h3 class="box-title">Total: {{us.users.length}} of {{us.users.length}}</h3>
@@ -94,12 +95,9 @@
     
     <!-- footer -->  
 
-    <!-- jQuery 2.2.3 -->
-    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button);
         
@@ -108,7 +106,7 @@
 
         function userCtrl($scope, $http) {
             var us = this
-            $http.get("../data/users.json")
+            $http.get("data/users.json")
             .success(function(response) {
                 console.log("Success")
                 us.users = response.employees
@@ -122,10 +120,8 @@
         }
 
     </script>
-    <!-- Bootstrap 3.3.6 -->
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../dist/js/app.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/app.min.js"></script>
 
 
 </body>

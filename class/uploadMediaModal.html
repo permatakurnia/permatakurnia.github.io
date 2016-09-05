@@ -1,0 +1,32 @@
+
+<div class="modal fade" tabindex="-1" role="dialog" id="uploadMediaModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Memuat naik gambar/video</h4>
+      </div>
+      <div class="modal-body">
+        
+        <div id="dropzone">
+          <form action="/upload" class="dropzone needsclick dz-clickable" id="demo-upload">
+            <div class="dz-message needsclick">
+              Bawak gambar ke ruang kotak ini atau tekan untuk memuat naik gambar. Hanya file jenis jpeg/png/mp4/3gp disokong untuk memuat naik ke dalam sistem<br>
+              
+            </div>
+          </form>
+
+        </div>
+        <div class="col-lg-12">
+          <label>Definasi gambar/video: </label>
+          <input class="form-control" ></input>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+        <button type="button" class="btn btn-primary">Tukar</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
