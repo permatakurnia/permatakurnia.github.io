@@ -9,7 +9,39 @@
       </div>
       <div class="modal-body">
         
-      <div ng-include="'user/_content.html'"></div>
+      <!-- <div ng-include="'user/_content.html'"> -->
+        <form class="form-horizontal col-md-12">
+          <div class="form-group">
+              <label class="control-label col-md-4">Nama</label>
+              <div class="col-md-8">
+                  <input type="text" name="name" class="form-control">
+              </div>
+
+              <label class="control-label col-md-4">Kata Laluan</label>
+              <div class="col-md-8">
+                  <input type="password" name="password" class="form-control">
+              </div>
+
+              <label class="control-label col-md-4">Peranan</label>
+              <div class="col-md-8">
+              <select class="form-control" name="role">
+                <option>Super Admin</option>
+                <option>Admin</option>
+                <option>Teacher</option>
+                <option>Parent</option>
+              </select>
+              </div>
+
+              <label class="control-label col-md-4">Status</label>
+              <div class="col-md-8">
+                  <select class="form-control" name="status">
+                <option>Aktif</option>
+                <option>Tidak Aktif</option>
+              </select>
+              </div>
+          </div>
+          </form>
+      <!-- </div> -->
 
 
       </div>

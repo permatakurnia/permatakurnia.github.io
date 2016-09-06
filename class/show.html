@@ -126,19 +126,129 @@
 
                     <div class="col-md-9 tab-content">
                       
-                      <div role="tabpanel" class="tab-pane active" id="all">
+                      <!-- <div role="tabpanel" class="tab-pane active" id="all">
                         <div role="tabpanel" class="tab-pane" ng-include="'class/_partials/teacher.html'"></div>
 
                         <div role="tabpanel" class="tab-pane" ng-include="'class/_partials/student.html'"></div>
 
                         <div role="tabpanel" class="tab-pane" ng-include="'class/_partials/media.html'"></div>
+                      </div> -->
+                      
+                      <div role="tabpanel" class="tab-pane" id="teacherBox" ng-include="'class/_partials/teacher.html'">       
+                        <div class="box box-info">
+                          <div class="box-header ">
+                            <h3 class="box-title"><strong>Senarai Guru </strong></h3>
+                          </div>
+                          <div class="box-header">
+                            <a class="btn btn-sm btn-success pull-right" data-toggle="modal" data-target="#teacherModal">Tambah Guru</a>
+                            <h3 class="box-title">Keseluruhan: {{cc.classes[0].students.length}} of {{cc.classes[0].students.length}}</h3>
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body table-responsive no-padding">
+                              <table class="table table-hover">
+                                  <tbody>
+                                      <tr>
+                                        <th>No</th>
+                                        <th>Nama Guru</th>
+                                        <th>Jawatan</th>
+                                      </tr>
+                                      <tr ng-repeat="teacher in cc.classes[0].teachers">
+                                        <td>{{$index+1}}</td>
+                                        <td><a href="">{{teacher.name}}</a> </td>
+                                        <td>{{teacher.designation}}</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                          <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+
+                      </div>
+
+                      <div role="tabpanel" class="tab-pane" id="studentBox" ng-include="'class/_partials/student.html'">
+                        <div class="box box-info">
+                          <div class="box-header ">
+                            <h3 class="box-title"><strong>Senarai Pelajar </strong></h3>
+                          </div>
+                          <div class="box-header ">
+                            <a class="btn btn-sm btn-success pull-right" data-toggle="modal" data-target="#studentModal">Tambah Pelajar</a>
+                            <h3 class="box-title">Keseluruhan: {{cc.classes[0].students.length}} of {{cc.classes[0].students.length}}</h3>
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body table-responsive no-padding">
+                              <table class="table table-hover">
+                                  <tbody>
+                                      <tr>
+                                        <th>No</th>
+                                        <th>Nama Pelajar</th>
+                                        <th>Gambar</th>
+                                      </tr>
+                                      <tr ng-repeat="student in cc.classes[0].students">
+                                        <td><span>{{$index+1}}</span></td>
+                                        <td><a href="student/show.html">{{student.name}}</a> </td>
+                                        <td><img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"> </td>
+                                        <td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                          <!-- /.box-body -->
+                          </div>
+                          <!-- /.box -->
                       </div>
                       
-                      <div role="tabpanel" class="tab-pane" id="teacherBox" ng-include="'class/_partials/teacher.html'"></div>
+                      <div role="tabpanel" class="tab-pane" id="mediaBox" ng-include="'class/_partials/media.html'">
+                        <div class="box box-info">
+                          <div class="box-header ">
+                            <h3 class="box-title"><strong>Media </strong></h3>
+                          </div>
+                          <div class="box-header">
+                            <a class="btn btn-sm btn-success pull-right" data-toggle="modal" data-target="#uploadMediaModal">Tambah media</a>
+                            <h2 class="box-title">Gambar pelajar, gambar aktiviti dan video</h2>
+                          </div>
+                            
+                          <!-- /.box-header -->
+                          <div class="box-body">
 
-                      <div role="tabpanel" class="tab-pane" id="studentBox" ng-include="'class/_partials/student.html'"></div>
-                      
-                      <div role="tabpanel" class="tab-pane" id="mediaBox" ng-include="'class/_partials/media.html'"></div>
+                            <!-- GAMBAR PELAJAR -->
+                            <div class="box-header alert-info">
+                              <h2 class="box-title">Gambar Pelajar</h2>
+                            </div>
+                            <div class="box-body" >
+                              <div class="col-md-4 text-center" ng-repeat="student in cc.classes[0].students">
+                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <h4>{{student.name}}</h4>
+                              </div>
+                            </div>
+
+                            <!-- GAMBAR-GAMBAR DALAM KELAS -->
+                            <div class="box-header alert-info">
+                              <h2 class="box-title">Gambar Aktiviti</h2>
+                            </div>
+                            <div class="box-body" >
+                              <div class="col-md-4 text-center" ng-repeat="student in cc.classes[0].students">
+                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <h4>Aktiviti {{$index+1}}</h4>
+                              </div>
+                            </div>
+
+                            <!-- Video  -->
+                            <div class="box-header alert-info">
+                              <h2 class="box-title">Video </h2>
+                            </div>
+                            <div class="box-body" >
+                              <div class="col-md-4 text-center" ng-repeat="student in cc.classes[0].students">
+                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <h4>Video {{$index+1}}</h4>
+                              </div>
+                            </div>
+
+                          </div>
+                          <!-- /.box-body -->
+                          </div>
+                          <!-- /.box -->
+                      </div>
                     </div>
 
                     <!-- side-bar -->
@@ -165,12 +275,9 @@
             var vm = this
             $http.get("data/class.json")
             .success(function(response) {
-                console.log("Success")
-                console.log(vm.classes)
                 vm.classes = response.class
             })
             .error(function(response) {
-                console.log("Failed")
                 console.log(response)
                 /* Act on the event */
             });
@@ -178,8 +285,6 @@
     </script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="dist/js/app.min.js"></script>
-    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
     <script src="plugins/dropzone/dist/min/dropzone.min.js"></script>
     <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 </body>
