@@ -38,15 +38,15 @@
                         <div class="box-body no-padding">
                             <div class="form-group">
                                 <label class="control-label col-md-4">Nama Kelas</label>
-                              <div class="col-md-8">
-                                    <input type="text" name="name" class="form-control">
-                              </div>
+                                    <div class="col-md-8">
+                                <input type="text" name="name" class="form-control">
+                                </div>
                               
                                 <label class="control-label col-md-4">Logo Kelas</label>
-                              <div id="dropzone" class="col-md-8">
-                                <form action="<?= $this->Url->build(['action' => 'documents', $vehicle->id]) ?>" class="dropzone" id="documents"></form>
-                              </div>
-                              <div class="text-center">
+                                <div id="dropzone" class="col-md-8">
+                                    <form action="<?= $this->Url->build(['action' => 'documents', $vehicle->id]) ?>" class="dropzone" id="documents"></form>
+                                </div>
+                                <div class="text-center">
                                   <a href="class/index.html" class="btn btn-danger">Batal</a>
                                   <a href="class/index.html" class="btn btn-success">Hantar</a>
                               </div>

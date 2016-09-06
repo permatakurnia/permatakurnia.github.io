@@ -25,17 +25,17 @@
               <div class="modal-body">
                 <div class="form-group">
                     <label class="control-label col-md-4">Nama Kelas</label>
-                  <div class="col-md-8">
-                        <input type="text" name="name" class="form-control">
-                  </div>
+                    <div class="col-md-8">
+                      <input type="text" name="name" class="form-control">
+                    </div>
                   
                     <label class="control-label col-md-4">Logo Kelas</label>
-                      <form action="/upload" class="dropzone needsclick dz-clickable" id="demo-upload">
-                        <div class="dz-message needsclick">
-                          Bawak gambar ke ruang kotak ini atau tekan untuk memuat naik gambar. Hanya file jenis jpeg/png/mp4/3gp disokong untuk memuat naik ke dalam sistem<br>
-                          
-                        </div>
-                      </form>
+                    <form action="/upload" class="dropzone needsclick dz-clickable" id="demo-upload">
+                      <div class="dz-message needsclick">
+                        Bawak gambar ke ruang kotak ini atau tekan untuk memuat naik gambar. Hanya file jenis jpeg/png/mp4/3gp disokong untuk memuat naik ke dalam sistem<br>
+                        
+                      </div>
+                    </form>
                 </div>
               </div>
               <div class="modal-footer">
@@ -134,7 +134,7 @@
                         <div role="tabpanel" class="tab-pane" ng-include="'class/_partials/media.html'"></div>
                       </div> -->
                       
-                      <div role="tabpanel" class="tab-pane" id="teacherBox" ng-include="'class/_partials/teacher.html'">       
+                      <div role="tabpanel" class="tab-pane" id="teacherBox">       
                         <div class="box box-info">
                           <div class="box-header ">
                             <h3 class="box-title"><strong>Senarai Guru </strong></h3>
@@ -166,7 +166,7 @@
 
                       </div>
 
-                      <div role="tabpanel" class="tab-pane" id="studentBox" ng-include="'class/_partials/student.html'">
+                      <div role="tabpanel" class="tab-pane" id="studentBox" >
                         <div class="box box-info">
                           <div class="box-header ">
                             <h3 class="box-title"><strong>Senarai Pelajar </strong></h3>
@@ -198,7 +198,7 @@
                           <!-- /.box -->
                       </div>
                       
-                      <div role="tabpanel" class="tab-pane" id="mediaBox" ng-include="'class/_partials/media.html'">
+                      <div role="tabpanel" class="tab-pane" id="mediaBox" >
                         <div class="box box-info">
                           <div class="box-header ">
                             <h3 class="box-title"><strong>Media </strong></h3>
