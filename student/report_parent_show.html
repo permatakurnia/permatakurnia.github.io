@@ -1,0 +1,133 @@
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+      <base href="https://permatakurnia.github.io/"/>
+      <!-- <base href="file:///C:/laragon/www/pk/"/> -->
+      <div ng-include="'templates/head.html'"></div>
+      
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini" ng-app="myApp">
+      
+      <div class="wrapper">
+          <!-- header -->
+          <div ng-include="'templates/header.html'"></div>
+   
+          <!-- side-bar -->
+          <div ng-include="'templates/side-bar.html'"></div>
+          <!-- Content Wrapper. Contains page content -->
+          <div class="content-wrapper">
+              <!-- Content Header (Page header) -->
+              <section class="content-header">
+                  <h1>
+                      Laporan Ibu Bapa
+                  </h1>
+              </section>
+              <!-- Main content -->
+              <section class="content" ng-controller="scaleCtrl as sc">
+                <div class="col-md-9">
+                  <div class="box box-solid">
+                    <div class="box-body">
+                      <label class="col-md-4 label-control">Nama Pelajar</label>
+                      <label class="col-md-8 ">Amalaina</label>
+                      
+                      <label class="col-md-4 label-control">No Kad Pelajar</label>
+                      <label class="col-md-8 ">969696989898</label>
+                      
+                      <label class="col-md-4 label-control">Tarikh Laporan</label>
+                      <label class="col-md-8 ">9 Okt, 2016</label>
+                      
+                      <label class="col-md-4 label-control">Kelas</label>
+                      <label class="col-md-8 ">Manggis</label>
+                      
+
+                      <label class="col-md-4 label-control">No Pendaftaran</label>
+                      <label class="col-md-8 ">A97AVMa</label>
+                      
+                      <label class="col-md-12 label-control">Skala Kemahiran</label>
+                      <div class="col-md-12">
+                        <br>
+                        <div class="box box-primary box-solid">
+                          <div class="box-header">SKALA KEMAHIRAN BERTARIKH 10/10/2016 - 30/10/2016</div>
+                          <div class="box-body">
+                            <table class="table ">
+                              <thead >
+                                <tr>
+                                  <th>Tarikh</th>
+                                  <th>Kemahiran</th>
+                                  <th>Pencapaian</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>10/10/2016</td>
+                                  <td>Latihan ke tandas</td>
+                                  <td>Boleh berdikari ke tandas</td>
+                                </tr>
+                                <tr>
+                                  <td>15/10/2016</td>
+                                  <td>Tingkah laku mencabar</td>
+                                  <td>Tingkah laku negatif mencabar</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+
+                      <label class="col-md-4 label-control">Catatan</label>
+                      <label class="col-md-8 ">Pelajar sentiasa ceria</label>
+                      
+                      <label class="col-md-4 label-control">Desidiakan Oleh : </label>
+                      <div class="col-md-8">
+                          <label class="label-control">Cik Siti</label>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="alert alert-warning"><i class="fa-exclamation-triangle fa"></i> Laporan ini hanya untuk paparan ibu bapa dan bukan untuk kegunaan rasmi</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div ng-include="'student/mini-bar.html'"></div>
+                </div>
+              </section>
+              <!-- /.content -->
+          </div>
+          <!-- /.content-wrapper -->
+      </div>
+      <!-- ./wrapper -->
+      <script src="plugins/jquery/dist/jquery.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+      <script src="plugins/angular/angular.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script src="dist/js/app.min.js"></script>
+      <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+      <script>
+          $.widget.bridge('uibutton', $.ui.button);
+          
+          angular.module('myApp', [])
+              .controller('scaleCtrl', scaleCtrl);
+          
+          function scaleCtrl($scope, $http) {
+              var us = this
+              us.today = new Date()
+              $http.get("data/scale.json")
+               .then(function(response) {
+                   us.skills = response.data.skills
+                   console.log(us.skills)
+               })
+          }
+          $(function () {
+              $('.datepicker').datepicker({
+                  autoclose: true
+              });
+          });
+      </script>
+
+  </body>
+
+  </html>

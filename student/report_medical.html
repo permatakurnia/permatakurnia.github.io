@@ -1,0 +1,135 @@
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+      <base href="https://permatakurnia.github.io/"/>
+      <!-- <base href="file:///C:/laragon/www/pk/"/> -->
+      <div ng-include="'templates/head.html'"></div>
+      
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini" ng-app="myApp">
+      
+      <div class="modal fade" tabindex="-1" role="dialog" id="reportMedical">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header alert-info">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Tambah Laporan Kesihatan</h4>
+            </div>
+            <div class="modal-body">
+              
+              <form class="form-horizontal col-md-12">
+                <div class="form-group">
+                    <label class="control-label col-md-4">Tarikh</label>
+                    <div class="col-md-8">
+                        <input class="form-control datepicker" type="text"></input>
+                    </div>
+
+                    <label class="control-label col-md-4">Tahap Kesihatan</label>
+                    <div class="col-md-8">
+                        <input class="form-control"></input>
+                    </div>
+
+                    <label class="control-label col-md-4">Tindakan</label>
+                    <div class="col-md-8">
+                        <input class="form-control"></input>
+                    </div>
+                </div>
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+              <button type="button" class="btn btn-primary">Tukar</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div class="wrapper">
+          <!-- header -->
+          <div ng-include="'templates/header.html'"></div>
+   
+          <!-- side-bar -->
+          <div ng-include="'templates/side-bar.html'"></div>
+          <!-- Content Wrapper. Contains page content -->
+          <div class="content-wrapper">
+              <!-- Content Header (Page header) -->
+              <section class="content-header">
+                  <h1>
+                      Laporan Ibu Bapa
+                  </h1>
+              </section>
+              <!-- Main content -->
+              <section class="content" ng-controller="scaleCtrl as sc">
+                <div class="col-md-9">
+                  <div class="box box-info">
+                    <div class="box-header ">
+                      <h3 class="box-title"><strong>Kesihatan </strong></h3>
+                      <a class="btn btn-sm btn-success pull-right" data-toggle="modal" data-target="#reportMedical">
+                        Tambah Guru
+                      </a>
+
+                    </div>
+                    <div class="box-body table-responsive">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                  <th>Tarikh</th>
+                                  <th>Tahap Kesihatan</th>
+                                  <th>Tindakan</th>
+                                </tr>
+                                <tr >
+                                  <td>22/1/2016</td>
+                                  <td>Jatuh ketika berskan</td>
+                                  <td>Guru Cik Siti terlah bawa ke klinik</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <!-- /.box -->
+
+                </div>
+                <div class="col-md-3">
+                  <div ng-include="'student/mini-bar.html'"></div>
+                </div>
+              </section>
+              <!-- /.content -->
+          </div>
+          <!-- /.content-wrapper -->
+      </div>
+      <!-- ./wrapper -->
+      <script src="plugins/jquery/dist/jquery.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+      <script src="plugins/angular/angular.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script src="dist/js/app.min.js"></script>
+      <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+      <script>
+          $.widget.bridge('uibutton', $.ui.button);
+          
+          angular.module('myApp', [])
+              .controller('scaleCtrl', scaleCtrl);
+
+          function scaleCtrl($scope, $http) {
+              var us = this
+              us.today = new Date()
+              $http.get("data/scale.json")
+               .then(function(response) {
+                   us.skills = response.data.skills
+                   console.log(us.skills)
+               })
+          }
+          $(function () {
+              $('.datepicker').datepicker({
+                  autoclose: true
+              });
+          });
+      </script>
+
+  </body>
+
+  </html>

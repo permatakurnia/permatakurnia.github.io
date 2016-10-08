@@ -1,0 +1,132 @@
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+      <base href="https://permatakurnia.github.io/"/>
+      <!-- <base href="file:///C:/laragon/www/pk/"/> -->
+      <div ng-include="'templates/head.html'"></div>
+      
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini" ng-app="myApp">
+      
+      <div class="wrapper">
+          <!-- header -->
+          <div ng-include="'templates/header.html'"></div>
+   
+          <!-- side-bar -->
+          <div ng-include="'templates/side-bar.html'"></div>
+          <!-- Content Wrapper. Contains page content -->
+          <div class="content-wrapper">
+              <!-- Content Header (Page header) -->
+              <section class="content-header">
+                  <h1>
+                      Laporan Ibu Bapa
+                  </h1>
+              </section>
+              <!-- Main content -->
+              <section class="content" ng-controller="scaleCtrl as sc">
+                <div class="box box-solid">
+                    <div class="box-body">
+                      <label class="col-md-4 label-control">Nama Pelajar</label>
+                      <div class="col-md-8">
+                          <select class="form-control" ng-model="stu_name">
+                            <option value="">Choose</option>
+                            <option value="Kamal">Kamal</option>
+                            <option value="Siti">Siti</option>
+                          </select>
+                      </div>
+
+                      <label class="col-md-4 label-control">No Kad Pelajar</label>
+                      <div class="col-md-8">
+                          <input class="form-control"  ng-if="!stu_name" ></input>
+                          <input class="form-control" ng-if="stu_name" value="969696989898"></input>
+                      </div>
+
+                      <label class="col-md-4 label-control">Tarikh Laporan</label>
+                      <div class="col-md-8">
+                          <input class="form-control" value="{{sc.today | date}}"></input>
+                      </div>
+
+                      <label class="col-md-4 label-control">Kelas</label>
+                      <div class="col-md-8">
+                          <input class="form-control"  ng-if="!stu_name" ></input>
+                          <input class="form-control" ng-if="stu_name" value="Manggis"></input>
+                      </div>
+
+                      <label class="col-md-4 label-control">No Pendaftaran</label>
+                      <div class="col-md-8">
+                          <input class="form-control"  ng-if="!stu_name" ></input>
+                          <input class="form-control" ng-if="stu_name" value="A97AVMa"></input>
+                      </div>
+
+                      <label class="col-md-4 label-control">Skala Kemahiran</label>
+                      <div class="col-md-4">
+                          <input class="form-control datepicker" id="datepicker" ng-model="date_start" ></input>
+                      </div>
+                      <div class="col-md-4">
+                          <input class="form-control  datepicker" ng-model="date_end" ></input>
+                      </div>
+
+                      <div class="col-md-12 text-center " ng-if="date_start && date_end && stu_name">
+                      <br>
+                        <div class="box box-primary box-solid">
+                          <div class="box-header">SKALA KEMAHIRAN BERTARIKH {{date_start}} - {{date_end}}</div>
+                          <div class="box-body">DATA</div>
+                        </div>
+                      </div>
+
+                      <label class="col-md-4 label-control">Catatan</label>
+                      <div class="col-md-8">
+                          <input class="form-control"></input>
+                      </div>
+
+
+                      <label class="col-md-4 label-control">Desidiakan Oleh : </label>
+                      <div class="col-md-8">
+                          <label class="label-control">Cik Siti</label>
+                      </div>
+
+                      <div class="text-center">
+                        <button class="btn btn-sm btn-primary">Cetak</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+              </section>
+              <!-- /.content -->
+          </div>
+          <!-- /.content-wrapper -->
+      </div>
+      <!-- ./wrapper -->
+      <script src="plugins/jquery/dist/jquery.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+      <script src="plugins/angular/angular.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script src="dist/js/app.min.js"></script>
+      <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+      <script>
+          $.widget.bridge('uibutton', $.ui.button);
+          
+          angular.module('myApp', [])
+              .controller('scaleCtrl', scaleCtrl);
+
+          function scaleCtrl($scope, $http) {
+              var us = this
+              us.today = new Date()
+              $http.get("data/scale.json")
+               .then(function(response) {
+                   us.skills = response.data.skills
+                   console.log(us.skills)
+               })
+          }
+          $(function () {
+              $('.datepicker').datepicker({
+                  autoclose: true
+              });
+          });
+      </script>
+
+  </body>
+
+  </html>

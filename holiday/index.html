@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <base href="https://permatakurnia.github.io/"/>
+    <!-- <base href="https://permatakurnia.github.io/"/> -->
+    <base href="file:///C:/laragon/www/pk/"/>
     <div ng-include="'templates/head.html'"></div>
     
 </head>
@@ -30,6 +31,7 @@
                         <div class="box box-solid">
                             <div class="box-header">
                                 <a href="#dummy-modal" data-toggle="modal" class="btn btn-success btn-sm pull-right"><i class="ion ion-ios-plus-outline"></i> Mohon Cuti</a>
+                                
                                 <div class="modal fade" id="dummy-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -75,8 +77,18 @@
                                                         <div class="form-group">
                                                             <label class="control-label">Tujuan/Sebab Cuti</label>
                                                             <div>
-                                                                <textarea class="form-control" rows="5" placeholder=""></textarea>
-                                                                <span class="help-block"></span>
+                                                                <div class="radio">
+                                                                  <label><input type="radio" name="optradio">Cuti Sakit</label>
+                                                                </div>
+                                                                <div class="radio">
+                                                                  <label><input type="radio" name="optradio">Temujanji</label>
+                                                                </div>
+                                                                <div class="radio">
+                                                                  <label><input type="radio" name="optradio">Ambil Awal</label>
+                                                                </div>
+                                                                <div class="radio">
+                                                                  <label><input type="radio" name="optradio">Ambil Lewat</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

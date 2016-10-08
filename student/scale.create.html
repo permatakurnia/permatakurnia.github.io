@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <!-- <base href="file:///C:/laragon/www/pk/"/> -->
     <base href="https://permatakurnia.github.io/"/>
     <div ng-include="'templates/head.html'"></div>
     
@@ -62,13 +63,40 @@
                                         </tr>                                         
                                     </thead>
                                     <thead>
-                                         <tr>
+                                        <tr>
                                             <th class="text-center">Perkara</th>
                                             <th class="text-center">Keterangan</th>
                                         </tr>                                         
                                     </thead>
+                                    <tbody ng-repeat="(keyScale,scale) in sc.scaleList">
+                                        <tr ng-repeat="matter in scale.matter">
+                                            <td rowspan="{{scale.matter.length}}" ng-if="$index==0" style="vertical-align:middle">{{scale.title}} 
+                                                <button class="btn btn-xs btn-danger" ng-click="sc.removeScale(keyScale)">
+                                                    <i class=" fa fa-trash-o"></i>
+                                                </button>
+                                            </td>
+                                            <td><input type="radio" name="input[{{scale.title}}]"> {{matter.description}}</input>
+                                            </td>
+                                        </tr>
+                                    </tbody >
                                     <tbody >
-                                        <tr ng-repeat="scale in sc.skills[0].matter">
+                                        <tr>
+                                            <td rowspan="1" colspan="2">
+                                                <!-- Single button -->
+                                                <div class="btn-group">
+                                                  <div class="dropdown">
+                                                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                        <i class="fa fa-plus"></i> Pilih Kemahiran
+                                                        <span class="caret"></span>
+                                                      </button>
+                                                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" >
+                                                        <li ng-repeat="scale in sc.skills"><a ng-click="sc.addScale(scale)">{{scale.title}}</a></li>
+                                                      </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                       <!--  <tr ng-repeat="scale in sc.skills[0].matter">
                                             <td rowspan="4" ng-if="$index==0" style="vertical-align:middle">{{sc.skills[0].title}}</td>
                                             <td><input type="checkbox" > {{scale.description}}</input>
                                             </td>
@@ -87,7 +115,7 @@
                                             <td rowspan="4" ng-if="$index==0" style="vertical-align:middle">{{sc.skills[3].title}}</td>
                                             <td><input type="checkbox" > {{scale.description}}</input>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                                 <br>
@@ -107,7 +135,7 @@
                                         <tr>
                                             <th>1</th>
                                             <th>2</th>
-                                            <th>3</th>M
+                                            <th>3</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -159,11 +187,29 @@
 
         function scaleCtrl($scope, $http) {
             var us = this
+            us.scaleList=[]
             $http.get("data/scale.json")
              .then(function(response) {
                  us.skills = response.data.skills
-                 console.log(us.skills)
              })
+             us.addScale = function(scale){
+                var push=false
+
+                    for (var i = 0; i < us.scaleList.length; i++) {
+                        push=false
+                        if( us.scaleList[i].title === scale.title){   
+                            push=true
+                            break
+                        }
+                    }
+
+                    if(!push)
+                        us.scaleList.push(scale)
+             }
+
+             us.removeScale = function(idx){
+                us.scaleList.splice(idx,1 )
+             }
         }
         $('#datepicker').datepicker({
                 autoclose: true
